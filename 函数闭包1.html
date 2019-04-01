@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript">
+        /*
+            全局变量：
+                在函数外部var声明
+                定义变量未使用var
+                window对象的属性
+            局部变量:
+                在函数内部声明的变量(包含参数)
+
+            建议：  尽量使用局部变量
+                    全局变量生命周期较长
+            垃圾回收机制
+
+            变量提升
+
+
+            函数闭包：有权在一个函数内部访问另一个函数作用域中的变量
+        */
+       //第一种闭包
+       //缺点：执行内部函数必须执行外部函数，执行外部函数顺带执行内部函数。
+       function show1(){
+            var a=10;
+            console.log(a);
+
+            function show2(){
+                var b=20;
+                console.log(a+b);
+            }
+            show2();
+       }
+       show1();
+
+
+
+       //第二种闭包优化版
+       function show3(){
+            var a=10;
+            console.log(a);
+            return function(){
+                var b=20;
+                console.log(a+b);
+            }
+       }
+       //执行外部函数不执行内部函数
+       console.log('执行外部函数不执行内部函数')
+       show3();
+       //使用变量赋值的方法把返回值（函数）赋给变量并执行内部函数
+       console.log('返回值赋值给变量-执行')
+       var s=show3();
+       s();
+       //简便写法
+       console.log('简便写法')
+       show3()();
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

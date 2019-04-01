@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        table{width: 500px;border: 1px solid gray;border-collapse: collapse;margin-top: 20px;}
+        th,td{line-height: 35px;border: 1px solid gray;text-align: center;}
+    </style>
+    <script type="text/javascript">
+    window.onload=function(){
+        var table=document.getElementById('info');
+        var btn=document.getElementById('btn-search');
+        var trs=table.getElementsByTagName('tbody')[0].getElementsByTagName('tr');
+        console.log(trs);
+        btn.onclick=function(){
+            for(var i=0;i<trs.length;i++){
+                trs[i].style.background='white';
+                var id=trs[i].children[0].innerHTML;
+                console.log(id);
+                var ipt1=document.getElementById('txt-id').value
+                if(ipt1==id){
+                    trs[i].style.background='yellow';
+                }
+            }
+            
+        }
+        
+
+    }
+    </script>
+</head>
+<body>
+    <label for="">ID</label><input type="text" id="txt-id">
+    <label for="">姓名</label><input type="text" id="txt-uname">
+    <button id="btn-search">搜索</button>
+    <table id="info">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>姓名</th>
+                <th>年龄</th>
+                <th>住址</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1001</td>
+                <td>李四</td>
+                <td>AAAA</td>
+                <td>AAAA</td>
+            </tr>
+            <tr>
+                <td>1002</td>
+                <td>王五</td>
+                <td>AAAA</td>
+                <td>AAAA</td>
+            </tr>
+            <tr>
+                <td>1003</td>
+                <td>王五</td>
+                <td>AAAA</td>
+                <td>AAAA</td>
+            </tr>
+            <tr>
+                <td>1004</td>
+                <td>Jack</td>
+                <td>AAAA</td>
+                <td>AAAA</td>
+            </tr>
+            <tr>
+                <td>1005</td>
+                <td>小兰</td>
+                <td>AAAA</td>
+                <td>AAAA</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

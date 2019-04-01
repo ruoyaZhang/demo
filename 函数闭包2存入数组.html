@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        function show(){
+            var arr=[];//空数组
+            //为数组赋值
+            for(var i=0;i<3;i++){
+                arr[i]=(function () {
+                    console.log(i);  
+                    return i;
+                })();
+            }
+
+            console.log(arr);//引用类型数组
+
+            //遍历
+            for(var j in arr){
+             arr[j]();//执行函数
+            }
+        }
+
+        show();
+    </script>
+</body>
+</html>

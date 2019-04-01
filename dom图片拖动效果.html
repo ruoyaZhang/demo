@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        img{width: 150px;height: 150px;}
+    </style>
+</head>
+<body>
+    <img src="img/1.jpg" alt="" id='pic'>
+    <script type="text/javascript">
+        var pic=document.getElementById('pic')
+        pic.style.position='absolute';
+        document.onMouseMove=function(e){
+            e=e||window.event;
+            var x=e.clientX;
+            console.log(x);
+            var y=e.clientY;
+            console.log(y);
+            pic.style.left=x+'px';
+            pic.style.top=y+'px';
+
+        }
+
+        
+    </script>
+</body>
+</html>
